@@ -40,6 +40,7 @@ public final class TenantStoreService {
             LOGGER.info("Initialized tenant store with '{}' records", store.size());
         } catch (Exception e) {
             LOGGER.error("Not able to initialize tenant store", e);
+            Runtime.getRuntime().halt(2);
         } finally {
             try {
                 if (resultSet != null) {
@@ -52,8 +53,9 @@ public final class TenantStoreService {
                     connection.close();
                 }
             } catch (SQLException e) {
-                e.printStackTrace();
+                LOGGER.error("Error closing down statements and connections", e);
             }
-        } return store;
+        }
+        return store;
     }
 }

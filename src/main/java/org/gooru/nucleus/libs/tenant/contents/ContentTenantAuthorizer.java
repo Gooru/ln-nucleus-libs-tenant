@@ -27,6 +27,11 @@ class ContentTenantAuthorizer implements ContentTenantAuthorization {
             || contentTenantVisibilityIsDiscoverableAndContentIsPublished();
     }
 
+    @Override
+    public boolean canCollaborate() {
+        return result.belongToSameRoot() || result.areSameLeaves();
+    }
+
     private boolean contentTenantVisibilityIsDiscoverableAndContentIsPublished() {
         return TenantStore.getInstance().getTenantById(contentTenantTree.tenant()).isContentVisibilityDiscoverable()
             && attributes.isContentRootPublished();

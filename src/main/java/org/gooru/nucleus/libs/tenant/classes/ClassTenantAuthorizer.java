@@ -25,6 +25,11 @@ class ClassTenantAuthorizer implements ClassTenantAuthorization {
     }
 
     @Override
+    public boolean canCollaborate() {
+        return result.areSameLeaves();
+    }
+
+    @Override
     public AuthorizationReason reason() {
         if (result.areSameLeaves()) {
             return AuthorizationReason.USER_CLASS_TENANT_MATCH;

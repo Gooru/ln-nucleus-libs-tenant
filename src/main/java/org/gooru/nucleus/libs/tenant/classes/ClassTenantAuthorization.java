@@ -9,6 +9,8 @@ public interface ClassTenantAuthorization {
 
     boolean canJoin();
 
+    boolean canCollaborate();
+
     AuthorizationReason reason();
 
     enum AuthorizationReason {

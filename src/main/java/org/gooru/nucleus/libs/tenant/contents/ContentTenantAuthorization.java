@@ -7,6 +7,8 @@ public interface ContentTenantAuthorization {
 
     boolean canRead();
 
+    boolean canCollaborate();
+
     enum AuthorizationReason {
         USER_CONTENT_TENANT_MATCH,
         USER_CONTENT_TENANT_TREE_MATCH,

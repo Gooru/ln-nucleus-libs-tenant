@@ -12,7 +12,11 @@ import org.gooru.nucleus.libs.tenant.bootstrap.TenantStore;
  *
  * @author Ashish <ashish@gooru.org>
  */
-public class TenantSettingsProviderBuilder {
+public final class TenantSettingsProviderBuilder {
+
+    private TenantSettingsProviderBuilder() {
+        throw new AssertionError();
+    }
 
     public static TenantSettingsProvider buildTenantSettingsProvider(String tenantId) {
         if (tenantId == null) {

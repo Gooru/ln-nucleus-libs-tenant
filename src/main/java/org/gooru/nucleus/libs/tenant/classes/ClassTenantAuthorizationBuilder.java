@@ -11,7 +11,7 @@ public final class ClassTenantAuthorizationBuilder {
         throw new AssertionError();
     }
 
-    public static ClassTenantAuthorization build(TenantTree classTenantTree, TenantTree userTenantTree) {
-        return new ClassTenantAuthorizer(classTenantTree, userTenantTree);
+    public static ClassTenantAuthorization build(TenantTree classTenantTree, TenantTree userTenantTree, ClassAttributes classAttributes) {
+        return new ClassTenantAuthorizer(classTenantTree, userTenantTree, classAttributes);
     }
 }

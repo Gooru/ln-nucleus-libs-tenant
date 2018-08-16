@@ -21,6 +21,7 @@ public class Tenant implements TenantSettingsProvider {
     private static final String CONTENT_VISIBILITY_DISCOVERABLE = "discoverable";
     private static final String CONTENT_VISIBILITY_TENANT = "tenant";
     private static final String CLASS_VISIBILITY_TENANT = "tenant";
+    private static final String CLASS_VISIBILITY_DISCOVERABLE = "discoverable";
     private static final String USER_VISIBILITY_TENANT = "tenant";
     private static final String USER_VISIBILITY_GLOBAL = "global";
 
@@ -70,6 +71,10 @@ public class Tenant implements TenantSettingsProvider {
 
     public boolean isClassVisibilityTenant() {
         return Objects.equals(this.classVisibility, CLASS_VISIBILITY_TENANT);
+    }
+    
+    public boolean isClassVisibilityDiscoverable() {
+    	return Objects.equals(this.classVisibility, CLASS_VISIBILITY_DISCOVERABLE);
     }
 
     public String getParentTenantId() {
